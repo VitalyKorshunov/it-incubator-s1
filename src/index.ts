@@ -3,6 +3,9 @@ import express, {Request, Response} from 'express'
 const app = express();
 const port = process.env.PORT || 3001
 
+const parserMiddleware = express.json()
+app.use(parserMiddleware)
+
 const products = [{id: 1, title: 'tomato'}, {id: 2, title: 'apple'}];
 const addresses = [{id: 1, value: 'Trudovie 11'}, {id: 2, value: 'Solnechnaya 20'}];
 
